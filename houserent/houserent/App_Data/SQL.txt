@@ -1,0 +1,1427 @@
+﻿if exists (select 1
+            from  sysobjects
+           where  id = object_id('AreaInfo')
+            and   type = 'U')
+   drop table AreaInfo
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('CityInfo')
+            and   type = 'U')
+   drop table CityInfo
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('Collect')
+            and   type = 'U')
+   drop table Collect
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('Image')
+            and   type = 'U')
+   drop table Image
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('Label')
+            and   type = 'U')
+   drop table Label
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('LeaveMessage')
+            and   type = 'U')
+   drop table LeaveMessage
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('MemberInfo')
+            and   type = 'U')
+   drop table MemberInfo
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('RentResource')
+            and   type = 'U')
+   drop table RentResource
+go
+
+if exists (select 1
+            from  sysobjects
+           where  id = object_id('StressInfo')
+            and   type = 'U')
+   drop table StressInfo
+go
+
+/*==============================================================*/
+/* Table: AreaInfo                                              */
+/*==============================================================*/
+create table AreaInfo (
+   ID                   int                  null,
+   AreaId               int                  null,
+   AreaName             text                 null,
+   CityId               int                  null
+)
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('AreaInfo')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'AreaId')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'AreaInfo', 'column', 'AreaId'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '区域Id',
+   'user', @CurrentUser, 'table', 'AreaInfo', 'column', 'AreaId'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('AreaInfo')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'AreaName')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'AreaInfo', 'column', 'AreaName'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '区域名称',
+   'user', @CurrentUser, 'table', 'AreaInfo', 'column', 'AreaName'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('AreaInfo')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'CityId')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'AreaInfo', 'column', 'CityId'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '城市ID',
+   'user', @CurrentUser, 'table', 'AreaInfo', 'column', 'CityId'
+go
+
+/*==============================================================*/
+/* Table: CityInfo                                              */
+/*==============================================================*/
+create table CityInfo (
+   ID                   int                  null,
+   PrivinceId           int                  null,
+   ProvinceName         text                 null,
+   CityId               int                  null,
+   CityName             text                 null
+)
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('CityInfo')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'PrivinceId')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'CityInfo', 'column', 'PrivinceId'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '省份ID',
+   'user', @CurrentUser, 'table', 'CityInfo', 'column', 'PrivinceId'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('CityInfo')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'ProvinceName')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'CityInfo', 'column', 'ProvinceName'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '省份名称',
+   'user', @CurrentUser, 'table', 'CityInfo', 'column', 'ProvinceName'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('CityInfo')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'CityId')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'CityInfo', 'column', 'CityId'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '城市ID',
+   'user', @CurrentUser, 'table', 'CityInfo', 'column', 'CityId'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('CityInfo')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'CityName')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'CityInfo', 'column', 'CityName'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '城市名称',
+   'user', @CurrentUser, 'table', 'CityInfo', 'column', 'CityName'
+go
+
+/*==============================================================*/
+/* Table: Collect                                               */
+/*==============================================================*/
+create table Collect (
+   ID                   int                  null,
+   MemberID             int                  null,
+   RentResourceId       int                  null
+)
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('Collect')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'MemberID')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'Collect', 'column', 'MemberID'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '会员ID',
+   'user', @CurrentUser, 'table', 'Collect', 'column', 'MemberID'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('Collect')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'RentResourceId')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'Collect', 'column', 'RentResourceId'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '房源ID',
+   'user', @CurrentUser, 'table', 'Collect', 'column', 'RentResourceId'
+go
+
+/*==============================================================*/
+/* Table: Image                                                 */
+/*==============================================================*/
+create table Image (
+   ID                   int                  null,
+   RentResourseID       int                  null,
+   ImageUrl             text                 null
+)
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('Image')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'ID')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'Image', 'column', 'ID'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '自增长',
+   'user', @CurrentUser, 'table', 'Image', 'column', 'ID'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('Image')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'RentResourseID')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'Image', 'column', 'RentResourseID'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '出租房源ID',
+   'user', @CurrentUser, 'table', 'Image', 'column', 'RentResourseID'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('Image')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'ImageUrl')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'Image', 'column', 'ImageUrl'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '图片地址',
+   'user', @CurrentUser, 'table', 'Image', 'column', 'ImageUrl'
+go
+
+/*==============================================================*/
+/* Table: Label                                                 */
+/*==============================================================*/
+create table Label (
+   ID                   int                  null,
+   RentResourseID       int                  null,
+   TagName              text                 null
+)
+go
+
+if exists (select 1 from  sys.extended_properties
+           where major_id = object_id('Label') and minor_id = 0)
+begin 
+   declare @CurrentUser sysname 
+select @CurrentUser = user_name() 
+execute sp_dropextendedproperty 'MS_Description',  
+   'user', @CurrentUser, 'table', 'Label' 
+ 
+end 
+
+
+select @CurrentUser = user_name() 
+execute sp_addextendedproperty 'MS_Description',  
+   '标签', 
+   'user', @CurrentUser, 'table', 'Label'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('Label')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'ID')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'Label', 'column', 'ID'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '自增长',
+   'user', @CurrentUser, 'table', 'Label', 'column', 'ID'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('Label')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'RentResourseID')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'Label', 'column', 'RentResourseID'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '出租房源ID',
+   'user', @CurrentUser, 'table', 'Label', 'column', 'RentResourseID'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('Label')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'TagName')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'Label', 'column', 'TagName'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '标签名称',
+   'user', @CurrentUser, 'table', 'Label', 'column', 'TagName'
+go
+
+/*==============================================================*/
+/* Table: LeaveMessage                                          */
+/*==============================================================*/
+create table LeaveMessage (
+   ID                   int                  null,
+   MemberID             int                  null,
+   Content              text                 null,
+   RentResourceID       int                  null,
+   DateTime             DateTime             null
+)
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('LeaveMessage')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'ID')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'LeaveMessage', 'column', 'ID'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '自增长',
+   'user', @CurrentUser, 'table', 'LeaveMessage', 'column', 'ID'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('LeaveMessage')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'MemberID')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'LeaveMessage', 'column', 'MemberID'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '会员ID',
+   'user', @CurrentUser, 'table', 'LeaveMessage', 'column', 'MemberID'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('LeaveMessage')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Content')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'LeaveMessage', 'column', 'Content'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '留言内容',
+   'user', @CurrentUser, 'table', 'LeaveMessage', 'column', 'Content'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('LeaveMessage')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'RentResourceID')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'LeaveMessage', 'column', 'RentResourceID'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '房源ID',
+   'user', @CurrentUser, 'table', 'LeaveMessage', 'column', 'RentResourceID'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('LeaveMessage')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'DateTime')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'LeaveMessage', 'column', 'DateTime'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '留言时间',
+   'user', @CurrentUser, 'table', 'LeaveMessage', 'column', 'DateTime'
+go
+
+/*==============================================================*/
+/* Table: MemberInfo                                            */
+/*==============================================================*/
+create table MemberInfo (
+   ID                   int                  null,
+   Name                 text                 null,
+   Sex                  int                  null,
+   PassWord             text                 null,
+   Description          text                 null,
+   Rank                 int                  null,
+   Type                 int                  null,
+   Image                text                 null
+)
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('MemberInfo')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'ID')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'MemberInfo', 'column', 'ID'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '会员ID',
+   'user', @CurrentUser, 'table', 'MemberInfo', 'column', 'ID'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('MemberInfo')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Name')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'MemberInfo', 'column', 'Name'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '会员昵称',
+   'user', @CurrentUser, 'table', 'MemberInfo', 'column', 'Name'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('MemberInfo')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Sex')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'MemberInfo', 'column', 'Sex'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '性别',
+   'user', @CurrentUser, 'table', 'MemberInfo', 'column', 'Sex'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('MemberInfo')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'PassWord')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'MemberInfo', 'column', 'PassWord'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '密码',
+   'user', @CurrentUser, 'table', 'MemberInfo', 'column', 'PassWord'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('MemberInfo')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Description')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'MemberInfo', 'column', 'Description'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '会员简介',
+   'user', @CurrentUser, 'table', 'MemberInfo', 'column', 'Description'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('MemberInfo')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Rank')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'MemberInfo', 'column', 'Rank'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '会员等级',
+   'user', @CurrentUser, 'table', 'MemberInfo', 'column', 'Rank'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('MemberInfo')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Type')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'MemberInfo', 'column', 'Type'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '会员类型（个人,中介）',
+   'user', @CurrentUser, 'table', 'MemberInfo', 'column', 'Type'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('MemberInfo')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Image')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'MemberInfo', 'column', 'Image'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '会员头像',
+   'user', @CurrentUser, 'table', 'MemberInfo', 'column', 'Image'
+go
+
+/*==============================================================*/
+/* Table: RentResource                                          */
+/*==============================================================*/
+create table RentResource (
+   ID                   int                  not null,
+   RentType             text                 null,
+   NameOfVillage        text                 null,
+   AreaName             text                 null,
+   StreetName           text                 null,
+   FullAddress          text                 null,
+   Room                 int                  null,
+   Hall                 int                  null,
+   RestRoom             int                  null,
+   Acreage              int                  null,
+   Floor                int                  null,
+   Floors               int                  null,
+   Direction            text                 null,
+   FitMent              text                 null,
+   HouseType            text                 null,
+   MoneyOfRent          Float                null,
+   MoneyRentOfType      text                 null,
+   Bed                  int                  null,
+   furniture            int                  null,
+   Gas                  int                  null,
+   CentralHeating       int                  null,
+   BroadBand            int                  null,
+   "Air-condition"      int                  null,
+   IceBox               int                  null,
+   TV                   char(10)             null,
+   WaterHeater          int                  null,
+   Title                text                 null,
+   LinkMan              text                 null,
+   Mobile               text                 null,
+   RentStartTime        DateTime             null,
+   MembersType          text                 null,
+   Description          text                 null,
+   MemberID             int                  null,
+   constraint PK_RENTRESOURCE primary key (ID)
+)
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'ID')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'ID'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '自增长',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'ID'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'RentType')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'RentType'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '出租方式',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'RentType'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'NameOfVillage')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'NameOfVillage'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '小区名称',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'NameOfVillage'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'AreaName')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'AreaName'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '区域',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'AreaName'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'StreetName')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'StreetName'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '街道',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'StreetName'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'FullAddress')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'FullAddress'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '详细地址',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'FullAddress'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Room')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Room'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '室',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Room'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Hall')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Hall'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '厅',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Hall'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'RestRoom')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'RestRoom'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '卫',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'RestRoom'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Acreage')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Acreage'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '面积',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Acreage'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Floor')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Floor'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '所属楼层',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Floor'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Floors')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Floors'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '总楼层',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Floors'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Direction')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Direction'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '房屋朝向',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Direction'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'FitMent')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'FitMent'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '房屋装修程度',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'FitMent'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'HouseType')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'HouseType'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '房屋类型（普通住宅）',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'HouseType'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'MoneyOfRent')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'MoneyOfRent'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '租金',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'MoneyOfRent'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'MoneyRentOfType')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'MoneyRentOfType'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '交租类型',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'MoneyRentOfType'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Bed')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Bed'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '床',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Bed'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'furniture')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'furniture'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '家具',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'furniture'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Gas')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Gas'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '煤气',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Gas'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'CentralHeating')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'CentralHeating'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '暖气',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'CentralHeating'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'BroadBand')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'BroadBand'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '宽带',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'BroadBand'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Air-condition')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Air-condition'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '空调',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Air-condition'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'IceBox')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'IceBox'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '冰箱',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'IceBox'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'TV')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'TV'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '电视',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'TV'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'WaterHeater')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'WaterHeater'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '热水器',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'WaterHeater'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Title')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Title'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '标题',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Title'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'LinkMan')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'LinkMan'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '联系人',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'LinkMan'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Mobile')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Mobile'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '联系电话',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Mobile'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'RentStartTime')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'RentStartTime'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '房屋开始出租时间',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'RentStartTime'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'MembersType')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'MembersType'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '出租房屋人的类型（个人，经纪人）',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'MembersType'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'Description')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Description'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '房屋简介',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'Description'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('RentResource')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'MemberID')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'MemberID'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '会员ID',
+   'user', @CurrentUser, 'table', 'RentResource', 'column', 'MemberID'
+go
+
+/*==============================================================*/
+/* Table: StressInfo                                            */
+/*==============================================================*/
+create table StressInfo (
+   ID                   int                  null,
+   StressID             int                  null,
+   AreaId               int                  null,
+   StressName           text                 null
+)
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('StressInfo')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'StressID')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'StressInfo', 'column', 'StressID'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '街道ID',
+   'user', @CurrentUser, 'table', 'StressInfo', 'column', 'StressID'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('StressInfo')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'AreaId')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'StressInfo', 'column', 'AreaId'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '区域ID',
+   'user', @CurrentUser, 'table', 'StressInfo', 'column', 'AreaId'
+go
+
+if exists(select 1 from sys.extended_properties p where
+      p.major_id = object_id('StressInfo')
+  and p.minor_id = (select c.column_id from sys.columns c where c.object_id = p.major_id and c.name = 'StressName')
+)
+begin
+   declare @CurrentUser sysname
+select @CurrentUser = user_name()
+execute sp_dropextendedproperty 'MS_Description', 
+   'user', @CurrentUser, 'table', 'StressInfo', 'column', 'StressName'
+
+end
+
+
+select @CurrentUser = user_name()
+execute sp_addextendedproperty 'MS_Description', 
+   '街道名称',
+   'user', @CurrentUser, 'table', 'StressInfo', 'column', 'StressName'
+go
