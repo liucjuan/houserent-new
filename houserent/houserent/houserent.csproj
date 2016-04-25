@@ -100,6 +100,7 @@
     <Content Include="App_Code\SetValueOfClass.cs" />
     <Content Include="App_Code\ErrorType.cs" />
     <Content Include="App_Code\EnumDisplayText.cs" />
+    <Content Include="App_Code\VryImgGen.cs" />
     <Compile Include="Controllers\DetailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListController.cs" />
