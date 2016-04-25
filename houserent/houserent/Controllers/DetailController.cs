@@ -6,17 +6,12 @@ using System.Web.Mvc;
 
 namespace houserent.Controllers
 {
-    public class ListController : Controller
+    public class DetailController : Controller
     {
         //
-        // GET: /List/
+        // GET: /Detail/
 
         public ActionResult Index()
-        {
-            return View();
-        }
-
-        public ActionResult List()
         {
             return View();
         }
