@@ -494,7 +494,7 @@ public class DBHelper
             {
                 foreach (string key in dic.Values)
                 {
-                    value += "'" + CommonLib.CutString.UrnHtml(key) + "',";
+                    value += "'" + key+ "',";
                 }
             }
         }
