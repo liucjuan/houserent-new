@@ -18,6 +18,5 @@ D:\git\house-rent\houserent-new\houserent\houserent\bin\System.Web.WebPages.Depl
 D:\git\house-rent\houserent-new\houserent\houserent\bin\System.Web.WebPages.Razor.xml
 D:\git\house-rent\houserent-new\houserent\houserent\bin\zh-Hans\EntityFramework.resources.dll
 D:\git\house-rent\houserent-new\houserent\houserent\bin\zh-Hans\System.Web.Providers.resources.dll
-D:\git\house-rent\houserent-new\houserent\houserent\obj\Debug\houserent.csprojResolveAssemblyReference.cache
 D:\git\house-rent\houserent-new\houserent\houserent\obj\Debug\houserent.dll
 D:\git\house-rent\houserent-new\houserent\houserent\obj\Debug\houserent.pdb

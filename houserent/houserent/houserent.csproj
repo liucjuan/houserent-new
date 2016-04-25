@@ -95,6 +95,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Code\DBConfig.cs" />
+    <Content Include="App_Code\DBHelper.cs" />
+    <Content Include="App_Code\SetValueOfClass.cs" />
+    <Content Include="App_Code\ErrorType.cs" />
     <Compile Include="Controllers\ListController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
