@@ -101,14 +101,24 @@
     <Content Include="App_Code\ErrorType.cs" />
     <Content Include="App_Code\EnumDisplayText.cs" />
     <Content Include="App_Code\VryImgGen.cs" />
+    <Content Include="App_Code\TableBusiness\TableHelper.cs" />
     <Compile Include="Controllers\DetailController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ListController.cs" />
     <Compile Include="Controllers\MemberController.cs" />
+    <Compile Include="Controllers\publishproductcontroller.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\AreaInfo.cs" />
+    <Compile Include="Models\CityInfo.cs" />
+    <Compile Include="Models\Collect.cs" />
+    <Compile Include="Models\Image.cs" />
+    <Compile Include="Models\Label.cs" />
+    <Compile Include="Models\LeaveMessage.cs" />
+    <Compile Include="Models\MemberInfo.cs" />
     <Compile Include="Models\RentResource.cs" />
+    <Compile Include="Models\StressInfo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -204,6 +214,7 @@
     <Content Include="Views\Member\Register.cshtml" />
     <Content Include="Views\Detail\Index.cshtml" />
     <Content Include="Views\List\List.cshtml" />
+    <Content Include="Views\PublishProduct\Index.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
