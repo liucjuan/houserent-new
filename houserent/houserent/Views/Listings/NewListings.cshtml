@@ -1,5 +1,568 @@
 ﻿@{
     ViewBag.Title = "NewListings111";
+    Layout = null;
 }
 
-<h2>NewListings</h2>
+<link rel="stylesheet" type="text/css" href="/static/css/newlistings.css" />
+
+
+<div class="head">
+    <div class="tbd">
+        <div id="where">
+            <div class="tophelp">
+                <span id="top_banner" style="position: relative;"><a target="_self" href="http://www.ganji.com/vip/" title="进入会员中心" class="dh" style="margin: 0px 5px 0px 0px; background-position: 65px -759px;">wishlovely</a><ul class="dh_cont top-nav-list hide" style="width: 80px; left: 0;">
+                    <li><a href="http://www.ganji.com/vip/my_post_list.php" style="line-height: 22px; width: 80px;">我发布的信息</a></li>
+                    <li><a href="http://www.ganji.com/vip/my_favorite_post_list.php" style="line-height: 22px; width: 80px;">我收藏的信息</a></li>
+                </ul>
+                    | <a id="logout_link" target="_self" href="http://www.ganji.com/user/logout.php?next=http%3A%2F%2Fwww.ganji.com%2Fpub%2Fpub.php%3Fact%3Dpub%26method%3Dload%26cid%3D7%26mcid%3D20%26domain%3Dsu%26domain%3Dsu">退出</a></span> &nbsp;&nbsp;
+        <div class="top-nav">
+            <a class="top-nav-btn dh" href="#" target="_blank" title="意见反馈" rel="nofollow">导航</a>
+            <!--鼠标离开调类：dh-->
+            <ul class="dh_cont hide">
+                <li><em><a href="/fang/" title="房产" target="_blank" gjalog="/top_nav@navtab=2@atype=click">房产：</a></em><a href="/fang1/" title="租房" target="_blank" gjalog="/top_nav@navtab=2@atype=click">租房</a> <a href="/fang5/" title="二手房" target="_blank" gjalog="/top_nav@navtab=2@atype=click">二手房</a> <a href="/fang6/" title="商铺" target="_blank" gjalog="/top_nav@navtab=2@atype=click">商铺</a> <a href="/fang8/" title="写字楼" target="_blank" gjalog="/top_nav@navtab=2@atype=click">写字楼</a></li>
+                <li><em><a href="/zhaopin/" title="招聘" target="_blank" gjalog="/top_nav@navtab=2@atype=click">招聘： </a></em><a href="/zhaopin/" title="全职" target="_blank" gjalog="/top_nav@navtab=2@atype=click">全职</a>  <a href="/jianzhi/" title="兼职" target="_blank" gjalog="/top_nav@navtab=2@atype=click">兼职</a>  <a href="/qiuzhi/" title="简历库" target="_blank" gjalog="/top_nav@navtab=2@atype=click">简历库</a></li>
+                <li><em><a href="/che/" title="车辆" target="_blank" gjalog="/top_nav@navtab=2@atype=click">车辆：</a></em><a href="/ershouche/" title="二手车" target="_blank" gjalog="/top_nav@navtab=2@atype=click">二手车</a> <a href="/motuoche/" title="摩托车" target="_blank" gjalog="/top_nav@navtab=2@atype=click">摩托车</a> <a href="/zixingchemaimai/" title="自行车" target="_blank" gjalog="/top_nav@navtab=2@atype=click">自行车</a> <a href="/pincheshangxiaban/" title="拼车" target="_blank" gjalog="/top_nav@navtab=2@atype=click">拼车</a></li>
+                <li><em><a href="/wu/" title="二手" target="_blank" gjalog="/top_nav@navtab=2@atype=click">二手： </a></em><a href="/shouji/" title="手机" target="_blank" gjalog="/top_nav@navtab=2@atype=click">手机</a> <a href="/ershoubijibendiannao/" title="笔记本" target="_blank" gjalog="/top_nav@navtab=2@atype=click">笔记本</a> <a href="/jiaju/" title="家具" target="_blank" gjalog="/top_nav@navtab=2@atype=click">家具</a> <a href="/jiadian/" title="家电" target="_blank" gjalog="/top_nav@navtab=2@atype=click">家电</a></li>
+                <li><em><a href="/chongwu/" title="宠物" target="_blank" gjalog="/top_nav@navtab=2@atype=click">宠物：</a></em><a href="/taidixiong/" title="泰迪熊" target="_blank" gjalog="/top_nav@navtab=2@atype=click">泰迪</a> <a href="/jinmao/" title="金毛犬" target="_blank" gjalog="/top_nav@navtab=2@atype=click">金毛</a> <a href="/zangao/" title="藏獒" target="_blank" gjalog="/top_nav@navtab=2@atype=click">藏獒</a> <a href="/hashiqi/" title="哈士奇" target="_blank" gjalog="/top_nav@navtab=2@atype=click">哈士奇</a></li>
+                <li><em><a href="/huangye/" title="服务" target="_blank" gjalog="/top_nav@navtab=2@atype=click">服务：</a></em><a href="/banjia/" title="搬家" target="_blank" gjalog="/top_nav@navtab=2@atype=click">搬家</a> <a href="/baomu/" title="保姆" target="_blank" gjalog="/top_nav@navtab=2@atype=click">保姆</a> <a href="/zuchedaijia/" title="租车" target="_blank" gjalog="/top_nav@navtab=2@atype=click">租车</a> <a href="/jiazheng/" title="家政" target="_blank" gjalog="/top_nav@navtab=2@atype=click">家政</a></li>
+                <li><em>其他：&nbsp;&nbsp;&nbsp;&nbsp;</em><a href="http://love.ganji.com/" title="婚恋" target="_blank" gjalog="/top_nav@navtab=2@atype=click">婚恋</a> <a href="http://www.mayi.com/?ifid=hz_bj_mayi_tab" title="短租" target="_blank" gjalog="/top_nav@navtab=2@atype=click">短租</a> <a href="/jiaoyupeixun/" title="教育培训" target="_blank" gjalog="/top_nav@navtab=2@atype=click">教育培训</a> <a href="/piaowu/" title="票务" target="_blank" gjalog="/top_nav@navtab=2@atype=click">票务</a></li>
+            </ul>
+        </div>
+            </div>
+            <a class="logo" href="/"></a>
+            <span class="city"><a href="/" class="f13">苏州</a> <a href="http://www.ganji.com/index.htm">[切换城市]</a> </span>
+            <a href="http://su.ganji.com/">苏州赶集</a> &gt; <a href="http://su.ganji.com/fang/">苏州房产</a> &gt; <a href="http://su.ganji.com/fang1/">苏州租房</a>
+        </div>
+    </div>
+</div>
+
+
+<div id="wrapper" class="pub">
+    <!--step s-->
+    <div class="process">
+        <ul>
+            <li class="onestep">
+                <span class="r-bg"></span>
+                <span class="xh">1</span>房产<a href="/pub/pub_select.php">(重选)</a>        </li>
+            <li class="twostep">
+                <span class="l-bg"></span>
+                <span class="r-bg"></span>
+                <span class="xh">2</span><span id="id_major_name">租房</span><a href="/pub/pub_select.php?category=housing" id="id_rechoose">(重选)</a>        </li>
+            <li class="threestep active">
+                <span class="l-bg"></span>
+                <span class="xh">3</span>填写详情
+            </li>
+        </ul>
+    </div>
+    <!--step e-->
+    <p class="hd-title" id="house_pub_tip"><i class="btnCls" id="tips_close"></i>个人每天可以发布<i class="fc-red">3</i>条信息，经纪人或中介可发布<i class="fc-red">20</i>条信息，<i class="fc-red">*</i>表示必填。</p>
+
+    <!--table s-->
+    <div class="add-detail">
+        <form method="post" id="id_post_form" enctype="multipart/form-data" action="http://www.ganji.com/pub/pub.php?cid=7&amp;mcid=20&amp;act=pub&amp;method=submit" novalidate="novalidate">
+            <table border="0" cellspacing="0" cellpadding="0" class="nc-table">
+                <tbody>
+                    <tr>
+                        <th width="100"><span class="star">*</span>出租方式</th>
+                        <td class="space">
+                            <input class="input-radio rentToShare" name="rent_mode" type="radio" value="1" checked="checked" id="rent_mode1" autocomplete="off"><label for="rent_mode1">整租</label>
+                            <input class="input-radioe shareToRent" name="rent_mode" type="radio" value="2" id="rent_mode2" autocomplete="off"><label for="rent_mode2">合租</label>
+                            <span id="tip_span_rent_mode"></span>
+                            <!--<label><input type="radio" autocomplete="off" value="1" name="rent_mode" />整租</label>
+	                <label><input type="radio" autocomplete="off" value="2" name="rent_mode" />合租</label>
+	                <span id="tip_span_rent_mode">
+	                </span>-->
+                        </td>
+                    </tr>
+                    <tr>
+                        <th width="100"><span class="star">*</span>您的身份</th>
+                        <td class="space">
+                            <span><a id="agent0" class="rent-mode"><i></i>个人</a></span>
+                            <span><a id="agent1" class="rent-mode"><i></i>经纪人</a></span>
+                            <input type="hidden" name="agent" id="agent" value="" autocomplete="off">
+                            <span id="tip_span_agent"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th width="100"><span class="star">*</span>小区</th>
+                        <td>
+                            <input id="id_xiaoqu" type="text" class="input-style" value="" name="xiaoqu" xiaoqu_id="" size="40" maxlength="20" domain="su" avg_price="" xiaoqu="" autocomplete="off"><span id="tip_validator_1_xiaoqu"></span>
+                            <input id="xiaoqu_pinyin" name="xiaoqu_pinyin" type="hidden" value="">
+                        </td>
+                    </tr>
+                    <tr>
+                        <th width="100"><span class="star">*</span>地址</th>
+                        <td>
+                            <div id="id_address">
+                                <div class="address addr-auto"></div>
+                                <div class="address addr-select">
+                                    <div class="select-box sel-area" id="district_area">
+                                        <input type="text" class="select-btn select-dist sel-btn-hover" name="_unused" placeholder="区域" value="">
+                                        <input type="hidden" name="district_id" id="id_district_id" value="" district_name="" autocomplete="off">
+                                        <div class="select-option" id="district_options" data-domain="bj">
+                                            <a href="javascript:void(0);" data-value="1557" script_index="0">园区</a>
+                                            <a href="javascript:void(0);" data-value="1558" script_index="1">新区</a>
+                                            <a href="javascript:void(0);" data-value="1559" script_index="2">平江</a>
+                                            <a href="javascript:void(0);" data-value="1560" script_index="3">沧浪</a>
+                                            <a href="javascript:void(0);" data-value="1561" script_index="4">金阊</a>
+                                            <a href="javascript:void(0);" data-value="1568" script_index="11">相城</a>
+                                            <a href="javascript:void(0);" data-value="1563" script_index="6">吴中</a>
+                                            <a href="javascript:void(0);" data-value="1564" script_index="7">昆山</a>
+                                            <a href="javascript:void(0);" data-value="1566" script_index="9">太仓</a>
+                                            <a href="javascript:void(0);" data-value="1565" script_index="8">常熟</a>
+                                            <a href="javascript:void(0);" data-value="1567" script_index="10">张家港</a>
+                                            <a href="javascript:void(0);" data-value="1570" script_index="13">吴江</a>
+                                        </div>
+                                    </div>
+                                    <div class="select-box sel-area other_location">
+                                        <input type="text" class="select-btn select-area sel-btn-hover" name="_unused" placeholder="街道" value="">
+                                        <input type="hidden" name="street_id" id="id_street_id" value="" street_name="" autocomplete="off">
+                                        <div class="select-option" id="area_options">
+                                        </div>
+                                    </div>
+                                    <input type="text" class="input-style input-address other_location" placeholder="详细地址" autocomplete="off" name="xiaoqu_address" value="" id="id_xiaoqu_address" size="35" maxlength="30">
+                                </div>
+                                <span id="tip_span_xiaoqu_address"></span>
+                                <div class="jiucuo" id="jiucuo"><a gjalog="/pub/uc_correct@atype=click">我要纠错</a></div>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <style>
+                        .address {
+                            float: left;
+                            display: inline;
+                        }
+
+                        .addr-auto {
+                            display: none;
+                        }
+                    </style>
+                    <tr id="mark_poi" style="display: none;">
+                        <th valign="top"><span class="star"></span>地图标记：</th>
+                        <td>
+                            <div id="map_load" style="width: 530px;">
+                                <div class="bmap-wrapper" style="position: relative; height: 300px;">
+                                    <div class="bmap-center" id="bmap_48_14617682779800_049452941390473626" style="height: 100%; position: relative; overflow: hidden; z-index: 0; color: rgb(0, 0, 0); text-align: left; background-color: rgb(243, 241, 236);">
+                                        <div class="setmap-submit" style="display: none;">
+                                            <a href="#" style="padding-top: 1px; font-size: 12px;">提交此地点</a>
+
+                                        </div>
+                                        <div id="area_guid_52_14617682782830_828437437956933" class="marker-widget">
+                                            <div class="marker-widget-c">
+                                                <div id="area_marker_guid_52_14617682782830_828437437956933" class="area-marker" style="left: 15px; top: 2px;"></div>
+                                                <div style="left: 45px; top: 10px; position: absolute;">←拖动此图标到地图上，即可标记</div>
+
+                                            </div>
+
+                                        </div>
+                                        <div id="move_marker_guid_52_14617682782830_828437437956933" class="area-marker" style="z-index: 202; display: none; left: 17px; bottom: 8px; top: auto;"></div>
+                                        <div style="overflow: visible; position: absolute; z-index: 0; left: 0px; top: 0px; cursor: url(&quot;http://api.map.baidu.com/images/openhand.cur&quot;) 8 8, default;">
+                                            <div class="BMap_mask" style="position: absolute; left: 0px; top: 0px; z-index: 9; overflow: hidden; -webkit-user-select: none; width: 0px; height: 0px;"></div>
+                                            <div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;">
+                                                <div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 800;"></div>
+                                                <div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 700;">
+                                                    <span class="BMap_Marker BMap_noprint" unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; cursor: pointer; width: 21px; height: 34px; left: -10.5px; top: -34px; z-index: -6263596; -webkit-user-select: none; background: url(&quot;http://api.map.baidu.com/images/blank.gif&quot;);" title=""></span>
+
+                                                </div>
+                                                <div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 600;"></div>
+                                                <div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 500;">
+                                                    <label class="BMapLabel" unselectable="on" style="position: absolute; display: none; cursor: inherit; border: 1px solid rgb(190, 190, 190); padding: 1px; white-space: nowrap; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: arial, sans-serif; z-index: -20000; color: rgb(190, 190, 190); background-color: rgb(190, 190, 190);">shadow</label>
+
+                                                </div>
+                                                <div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 400;">
+                                                    <span class="BMap_Marker" unselectable="on" style="position: absolute; padding: 0px; margin: 0px; border: 0px; width: 0px; height: 0px; left: -10.5px; top: -34px; z-index: -6263596;">
+                                                        <div style="position: absolute; margin: 0px; padding: 0px; width: 21px; height: 34px; overflow: hidden;">
+                                                            <img src="http://sta2.ganjistatic2.com/public/tool/bmap/image/setmarker.png" style="border: none; left: 0px; top: 0px; position: absolute;">
+                                                        </div>
+                                                        <label class="BMapLabel" unselectable="on" style="position: absolute; display: inline; cursor: inherit; border: 1px solid rgb(255, 0, 0); padding: 1px; white-space: nowrap; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 12px; line-height: normal; font-family: arial, sans-serif; z-index: 80; -webkit-user-select: none; left: 25px; top: -10px; background-color: rgb(255, 255, 255);">请拖动此箭头标记小区位置</label>
+
+                                                    </span>
+
+                                                </div>
+                                                <div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 300;"></div>
+                                                <div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 201;"></div>
+                                                <div style="position: absolute; height: 0px; width: 0px; left: 0px; top: 0px; z-index: 200;"></div>
+
+                                            </div>
+                                            <div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 1;">
+                                                <div style="position: absolute; overflow: visible; z-index: -100; left: 0px; top: 0px;">
+                                                    <img src="http://online3.map.bdimg.com/tile/?qt=tile&amp;x=13112&amp;y=3566&amp;z=16&amp;styles=pl&amp;udt=20150518" style="position: absolute; border: none; width: 256px; height: 256px; left: -201px; top: -226px; max-width: none; opacity: 1;">
+                                                </div>
+
+                                            </div>
+                                            <div style="position: absolute; overflow: visible; top: 0px; left: 0px; z-index: 2;"></div>
+
+                                        </div>
+                                        <div id="zoomer" style="position: absolute; z-index: 0; top: 0px; left: 0px; overflow: hidden; visibility: hidden; cursor: url(http://api.map.baidu.com/images/openhand.cur) 8 8,default">
+                                            <div class="BMap_zoomer" style="top: 0; left: 0;">
+                                            </div>
+                                            <div class="BMap_zoomer" style="top: 0; right: 0;">
+                                            </div>
+                                            <div class="BMap_zoomer" style="bottom: 0; left: 0;">
+                                            </div>
+                                            <div class="BMap_zoomer" style="bottom: 0; right: 0;">
+                                            </div>
+
+                                        </div>
+                                        <div unselectable="on" class=" BMap_stdMpCtrl BMap_stdMpType0 BMap_noprint anchorTL" style="width: 62px; height: 192px; bottom: auto; right: auto; top: 10px; left: 10px; position: absolute; z-index: 1100;">
+                                            <div class="BMap_stdMpPan">
+                                                <div class="BMap_button BMap_panN" title="向上平移"></div>
+                                                <div class="BMap_button BMap_panW" title="向左平移"></div>
+                                                <div class="BMap_button BMap_panE" title="向右平移"></div>
+                                                <div class="BMap_button BMap_panS" title="向下平移"></div>
+                                                <div class="BMap_stdMpPanBg BMap_smcbg"></div>
+                                            </div>
+                                            <div class="BMap_stdMpZoom" style="height: 147px; width: 62px;">
+                                                <div class="BMap_button BMap_stdMpZoomIn" title="放大一级">
+                                                    <div class="BMap_smcbg"></div>
+
+                                                </div>
+                                                <div class="BMap_button BMap_stdMpZoomOut" title="缩小一级" style="top: 126px;">
+                                                    <div class="BMap_smcbg"></div>
+                                                </div>
+                                                <div class="BMap_stdMpSlider" style="height: 108px;">
+                                                    <div class="BMap_stdMpSliderBgTop" style="height: 108px;">
+                                                        <div class="BMap_smcbg"></div>
+
+                                                    </div>
+                                                    <div class="BMap_stdMpSliderBgBot" style="top: 19px; height: 93px;"></div>
+                                                    <div class="BMap_stdMpSliderMask" title="放置到此级别"></div>
+                                                    <div class="BMap_stdMpSliderBar" title="拖动缩放" style="cursor: url(&quot;http://api.map.baidu.com/images/openhand.cur&quot;) 8 8, default; top: 19px;">
+                                                        <div class="BMap_smcbg"></div>
+
+                                                    </div>
+
+                                                </div>
+                                                <div class="BMap_zlHolder">
+                                                    <div class="BMap_zlSt">
+                                                        <div class="BMap_smcbg"></div>
+
+                                                    </div>
+                                                    <div class="BMap_zlCity">
+                                                        <div class="BMap_smcbg"></div>
+
+                                                    </div>
+                                                    <div class="BMap_zlProv">
+                                                        <div class="BMap_smcbg">
+                                                        </div>
+
+                                                    </div>
+                                                    <div class="BMap_zlCountry">
+                                                        <div class="BMap_smcbg">
+                                                        </div>
+
+                                                    </div>
+
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+                                        <div class=" anchorBL" style="height: 32px; position: absolute; z-index: 10; bottom: 0px; right: auto; top: auto; left: 1px; display: none;">
+                                            <a title="到百度地图查看此区域" target="_blank" href="http://map.baidu.com/?sr=1" style="outline: none;">
+                                                <img style="border: none; width: 77px; height: 32px" src="http://api.map.baidu.com/images/copyright_logo.png"></a>
+                                        </div>
+                                        <div unselectable="on" class=" BMap_cpyCtrl BMap_noprint anchorBL" style="cursor: default; white-space: nowrap; color: black; font-style: normal; font-variant: normal; font-weight: normal; font-stretch: normal; font-size: 11px; line-height: 15px; font-family: arial, sans-serif; bottom: 2px; right: auto; top: auto; left: 4px; position: absolute; z-index: 10; background: none;"><span _cid="1" style="display: inline;"><span style="font-size: 11px">© 2015 Baidu&nbsp;- Data © <a target="_blank" href="http://www.navinfo.com/" style="display: inline;">NavInfo</a> &amp; <a target="_blank" href="http://www.cennavi.com.cn/" style="display: inline;">CenNavi</a> &amp; <a target="_blank" href="http://www.365ditu.com/" style="display: inline;">道道通</a></span></span></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span id="map_tip" style="color: #060;"></span>
+                            <input name="latlng" type="hidden" id="latlng" city_name="苏州" domain="su" value="b120.619907,31.317987">
+                        </td>
+                    </tr>
+
+
+                    <tr>
+                        <th width="100"><span class="star">*</span>户型</th>
+                        <td>
+                            <span class="tbl-txt">
+                                <input type="text" size="2" class="input-style huxing" name="huxing_shi" maxlength="2" value=""></span>
+                            <span class="tbl-txt">室</span>
+                            <span class="tbl-txt">
+                                <input type="text" size="2" class="input-style huxing" name="huxing_ting" maxlength="2" value=""></span>
+                            <span class="tbl-txt">厅</span>
+                            <span class="tbl-txt">
+                                <input type="text" size="2" class="input-style huxing" name="huxing_wei" maxlength="2" value=""></span>
+                            <span class="tbl-txt">卫</span>
+                            <span class="tbl-txt">
+                                <input type="text" size="4" class="input-style huxing" name="area" placeholder="面积" id="id_area" value=""></span>
+                            <span class="tbl-txt">㎡</span>
+                            <span id="tip_span_huxing"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th width="100"><span class="star">*</span>楼层</th>
+                        <td>
+                            <span class="tbl-txt">
+                                <input type="text" size="2" class="input-style huxing" name="ceng" maxlength="2" value=""></span>
+                            <span class="tbl-txt">层 / 共</span>
+                            <span class="tbl-txt">
+                                <input type="text" size="2" class="input-style huxing" name="ceng_total" maxlength="2" value=""></span>
+                            <span class="tbl-txt">层</span>
+                            <span id="tip_span_ceng"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th width="100"><span class="star">*</span>房屋情况</th>
+                        <td data-widget="app/ms_v2/housing/pub/widget_rent_pub.js#houseExtra">
+
+                            <div class="select-box">
+                                <input type="text" name="_unused" class="select-btn sel-btn-hover" value="-朝向-"><input type="hidden" class="select-input" value="" name="chaoxiang" autocomplete="off"><div class="select-option" id=""><a href="javascript: void(0);" data-value="1">东</a><a href="javascript: void(0);" data-value="2">南</a><a href="javascript: void(0);" data-value="3">西</a><a href="javascript: void(0);" data-value="4">北</a><a href="javascript: void(0);" data-value="6">南北</a><a href="javascript: void(0);" data-value="5">东西</a><a href="javascript: void(0);" data-value="7">东南</a><a href="javascript: void(0);" data-value="9">西南</a><a href="javascript: void(0);" data-value="8">东北</a><a href="javascript: void(0);" data-value="10">西北</a></div>
+                            </div>
+                            <div class="select-box">
+                                <input type="text" name="_unused" class="select-btn sel-btn-hover" value="-装修情况-"><input type="hidden" class="select-input" value="" name="zhuangxiu" autocomplete="off"><div class="select-option" id=""><a href="javascript: void(0);" data-value="1">豪华装修</a><a href="javascript: void(0);" data-value="2">精装修</a><a href="javascript: void(0);" data-value="3">中等装修</a><a href="javascript: void(0);" data-value="4">简单装修</a><a href="javascript: void(0);" data-value="5">毛坯</a></div>
+                            </div>
+                            <div class="select-box">
+                                <input type="text" name="_unused" class="select-btn sel-btn-hover" value="普通住宅"><input type="hidden" class="select-input" value="3" name="fang_xing" autocomplete="off"><div class="select-option" id=""><a href="javascript: void(0);" data-value="2">平房/四合院</a><a href="javascript: void(0);" data-value="3">普通住宅</a><a href="javascript: void(0);" data-value="4">公寓</a><a href="javascript: void(0);" data-value="5">商住两用</a><a href="javascript: void(0);" data-value="7">别墅</a><a href="javascript: void(0);" data-value="8">其他</a></div>
+                            </div>
+                            <span id="tip_span_zhuangxiu"></span>
+                        </td>
+                    </tr>
+
+                    <script>
+                        function checkAll(name, o) {
+                            var o = $("#operation");
+                            var textVal = o.html();
+                            if (textVal == '全选') {
+                                var ary = document.getElementsByName(name);
+                                for (var i = 0; i < ary.length; i++) {
+                                    ary[i].checked = true;
+                                }
+                            }
+                            else { // 全不选
+                                var ary = document.getElementsByName(name);
+                                for (var i = 0; i < ary.length; i++) {
+                                    ary[i].checked = false;
+                                }
+                            }
+                            textVal = textVal == '全选' ? '取消全选' : '全选';
+                            o.html(textVal);
+                            return;
+                        }
+
+                    </script>
+
+                    <tr>
+                        <th width="100"><span class="star">*</span>房屋配置</th>
+                        <td class="space space2">
+                            <label>
+                                <input name="peizhi[]" type="checkbox" value="chuang" checked="">床</label>
+                            <label>
+                                <input name="peizhi[]" type="checkbox" value="jiaju">家具</label>
+                            <label>
+                                <input name="peizhi[]" type="checkbox" value="meiqi">煤气</label>
+                            <label>
+                                <input name="peizhi[]" type="checkbox" value="nuanqi">暖气</label>
+                            <label>
+                                <input name="peizhi[]" type="checkbox" value="kuandai">宽带</label>
+                            <label>
+                                <input name="peizhi[]" type="checkbox" value="dianshiji">电视</label>
+                            <label>
+                                <input name="peizhi[]" type="checkbox" value="kongtiao">空调</label>
+                            <label>
+                                <input name="peizhi[]" type="checkbox" value="bingxiang">冰箱</label>
+                            <label>
+                                <input name="peizhi[]" type="checkbox" value="xiyiji">洗衣机</label>
+                            <label>
+                                <input name="peizhi[]" type="checkbox" value="reshuiqi">热水器</label>
+                            <a class="btn-chkall" id="operation" onclick="checkAll('peizhi[]', this)">全选</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th width="100"><span class="star">*</span>租金</th>
+                        <td data-widget="app/ms_v2/housing/pub/widget_rent_pub.js#selectOptions" data-filter="3">
+                            <span class="tbl-txt">
+                                <input type="text" size="5" maxlength="7" class="input-style" id="price" name="price" value=""></span>
+                            <span class="tbl-txt">元 / 月</span>
+                            <div class="select-box">
+                                <input type="text" name="_unused" class="select-btn sel-btn-hover" value="押一付三"><input type="hidden" class="select-input" value="1" name="pay_type_int" autocomplete="off"><div class="select-option" id=""><a href="javascript: void(0);" data-value="1">押一付三</a><a href="javascript: void(0);" data-value="3">押一付一</a><a href="javascript: void(0);" data-value="4">押一付二</a><a href="javascript: void(0);" data-value="5">押二付一</a><a href="javascript: void(0);" data-value="9">押二付三</a><a href="javascript: void(0);" data-value="6">半年付不押</a><a href="javascript: void(0);" data-value="7">年付不押</a><a href="javascript: void(0);" data-value="8">押一付半年</a><a href="javascript: void(0);" data-value="10">押一付年</a><a href="javascript: void(0);" data-value="11">押二付年</a><a href="javascript: void(0);" data-value="12">押三付年</a><a href="javascript: void(0);" data-value="2">其他</a></div>
+                            </div>
+                            <span id="tip_span_price"></span>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th width="100"><span class="star">*</span>标题</th>
+                        <td>
+                            <input name="title" type="text" class="input-style" id="title" size="66" maxlength="30" placeholder="吸引人的标题可让更多的人看您的信息哦" value="">
+                            <span id="tip_span_title"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <style>
+                            #houseTag .hide {
+                                display: none;
+                            }
+
+                            #houseTag .show {
+                                display: block;
+                            }
+                        </style>
+                        <th width="100" valign="top"><span class="star"></span>标签</th>
+                        <td data-widget="app/ms_v2/housing/pub/widget_rent_pub.js#houseTag" id="houseTag">
+                            <div class="lbl-box" data-max="7" style="width: 640px;">
+                                <div class="lbl-add clearfix">
+                                    <ul class="lbl-add-list clearfix" data-role="selected">
+                                        <li class="lbl-add-item hide" data-index="1" id="tag_jzx">
+                                            <i class="lbl-clsbtn js-close js-auto-tag">×</i><span>精装修</span>
+                                        </li>
+                                        <li class="lbl-add-item hide" data-index="2" id="tag_jdqq">
+                                            <i class="lbl-clsbtn js-close js-auto-tag">×</i><span>家电齐全</span>
+                                        </li>
+                                        <li class="lbl-add-item hide" data-index="3" id="tag_yyfy">
+                                            <i class="lbl-clsbtn js-close js-auto-tag">×</i><span>押一付一</span>
+                                        </li>
+                                        <li class="lbl-add-item hide" data-index="4" id="tag_dansheng">
+                                            <i class="lbl-clsbtn js-close js-auto-tag">×</i><span>单身公寓</span>
+                                        </li>
+                                        <li class="lbl-add-item hide" data-index="5" id="">
+                                            <i class="lbl-clsbtn js-close js-auto-tag">×</i><span>邻近地铁</span>
+                                        </li>
+                                        <li class="lbl-add-item hide" data-index="6" id="">
+                                            <i class="lbl-clsbtn js-close js-auto-tag">×</i><span>市政供暖</span>
+                                        </li>
+
+
+                                        <li style="float: left" data-role="add"><a href="#" class="lbl-add-ico">+</a></li>
+                                        <li style="float: left">
+                                            <input type="text" placeholder="回车键确认" data-role="input" value="" maxlength="5" class="lbl-add-input js-input" style="display: none;">
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div data-role="items" class="lbl-choose ">
+                                    <span class="fl">推荐：</span>
+                                    <a data-index="1" href="###" class="lbl-choose-item">精装修</a>
+                                    <a data-index="2" href="###" class="lbl-choose-item">家电齐全</a>
+                                    <a data-index="3" href="###" class="lbl-choose-item">押一付一</a>
+                                    <a data-index="4" href="###" class="lbl-choose-item">单身公寓</a>
+                                    <a data-index="5" href="###" class="lbl-choose-item">邻近地铁</a>
+                                    <a data-index="6" href="###" class="lbl-choose-item">市政供暖</a>
+                                </div>
+                            </div>
+                            <input name="tab_system" data-role="inputSys" type="hidden" value="">
+                            <input name="tab_personality" data-role="inputPerson" type="hidden" value="">
+                            <span id="tip_span_title"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th width="100" valign="top"><span class="star">*</span>描述</th>
+                        <td>
+                            <div class="des-l">
+                                <textarea id="id_description" name="description" placeholder="房屋详细信息，小区情况，周边配套，交通情况，对租客的要求，入住时间" autocomplete="off" class="txtarea"></textarea>
+                            </div>
+                            <div class="des-r">
+                                <span id="tip_span_description"></span>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th width="100" valign="top"><span class="star"></span>上传照片</th>
+                        <td width="846">
+                            <div class="ui-uploader" id="ui-uploader-1">
+                                <div class="ui-uploader-action">
+                                    <div class="ui-uploader-iframe-container">
+                                        <div>
+                                            <object id="SWFUpload_0" name="SWFUpload_0" type="application/x-shockwave-flash" data="http://sta.ganji.com/public/swf/swfupload-2.swf?5729" width="101" height="30" class="swfupload">
+                                                <param name="wmode" value="opaque">
+                                                <param name="movie" value="http://sta.ganji.com/public/swf/swfupload-2.swf?5729">
+                                                <param name="quality" value="high">
+                                                <param name="allowScriptAccess" value="always">
+                                                <param name="flashvars" value="movieName=SWFUpload_0&amp;uploadURL=http%3A%2F%2Fimage.ganji.com%2Fupload.php&amp;useQueryString=false&amp;requeueOnError=false&amp;httpSuccess=&amp;assumeSuccessTimeout=0&amp;params=maxSize%3D10485759%26amp%3BresizeImage%3Dtrue%26amp%3BresizeWidth%3D600%26amp%3BresizeHeight%3D450%26amp%3BresizeCutEnable%3Dfalse%26amp%3BcreateThumb%3Dfalse%26amp%3BthumbWidth%3D90%26amp%3BthumbHeight%3D75%26amp%3BthumbCutEnable%3Dtrue%26amp%3BminWidth%3D0%26amp%3BminHeight%3D0%26amp%3BuploadDir%3Dhousing%26amp%3BMAX_FILE_SIZE%3D10485759%26amp%3Btype%3Djpg%252Cjpeg%252Cpng%252Cbmp&amp;filePostName=Filedata&amp;fileTypes=*.jpg%3B*.jpeg%3B*.png%3B*.bmp&amp;fileTypesDescription=%E5%9B%BE%E7%89%87&amp;fileSizeLimit=10485759&amp;fileUploadLimit=8&amp;fileQueueLimit=8&amp;debugEnabled=true&amp;buttonImageURL=http%3A%2F%2Fstacdn201.ganjistatic1.com%2Fsrc%2Fimage%2Fhouse%2Fpub%2FuploadPc.png&amp;buttonWidth=101&amp;buttonHeight=30&amp;buttonText=&amp;buttonTextTopPadding=0&amp;buttonTextLeftPadding=0&amp;buttonTextStyle=.button%20%7B%20font-family%3A%20Helvetica%2C%20Arial%2C%20sans-serif%3B%20font-size%3A%2012pt%3B%20%7D%20.buttonSmall%20%7B%20font-size%3A%2010pt%3B%20%7D&amp;buttonAction=-110&amp;buttonDisabled=false&amp;buttonCursor=-2">
+                                            </object>
+                                        </div>
+                                    </div>
+                                    <a href="###" class="ui-uploader-cloud-photo-btn" data-puid="0">&nbsp;</a>
+                                    <a href="http://mobile.ganji.com/" target="_blank">下载手机客户端&gt;&gt;</a>
+                                </div>
+                                <span class="ui-uploader-message" style="margin-left: 0">最多8张，可多选上传，最大10MB。有图可使浏览量增加3倍，并会在推荐位显示。</span>
+                                <ul class="ui-uploader-thumbImages ui-uploader-sortable"></ul>
+                            </div>
+                            <input id="input_upload_image1" type="hidden" name="images">
+                        </td>
+                    </tr>
+                    <tr class="percent_attestation_checkbox hide">
+                        <th width="100"></th>
+                        <td>
+
+                            <div class="per-cert">
+                                <div class="per-chk">
+                                    <input type="checkbox" name="auth_status" id="auth_status" value="">
+                                </div>
+                                <div class="per-right">
+                                    <div class="per-tit">
+                                        <span class="fl per-cert-add">加入</span>
+                                        <span class="ico-personal ico-permob fl"></span><span class="fl">计划</span>
+                                    </div>
+                                    <p class="per-tip">认证手机号码，快速出租房源。</p>
+                                </div>
+                            </div>
+
+                        </td>
+                    </tr>
+                    <tr>
+                        <th width="100"><span class="star"></span>联系人</th>
+                        <td>
+                            <input type="text" size="20" class="input-style" name="person" value=""><span id="tip_span_person"></span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th width="100"><span class="star">*</span>联系电话</th>
+                        <td>
+                            <input type="text" id="js-phone" size="20" class="input-style" name="phone" value="18051734708">
+                            <div class="fl" data-widget="app/ms_v2/housing/phone_confirmation_code.js#phoneValidate">
+                                <span class="tbl-code percent_attestation hide"><a href="javascript:void(0)" class="getcode" id="get_verify">获取手机确认码</a></span>
+                                <span><span class="error-tips" id="js-hintText" style="display: none">6位数字确认码已发送，请查收手机短信</span></span>
+                            </div>
+                            <span id="tip_span_phone"></span>
+                        </td>
+                    </tr>
+                    <tr class="percent_attestation hide">
+                        <th width="100"><span class="star">*</span>确认码</th>
+                        <td>
+                            <input type="text" value="" size="20" class="input-style" name="phone_verify" id="js-phone_verify">
+                            <span id="tip_span_phone_verify"></span>
+                        </td>
+                    </tr>
+                    <tr class="percent_attestation hide">
+                        <th width="100" valign="top"><span class="star">*</span>房东有话说</th>
+                        <td>
+                            <textarea id="id_userWord" name="user_word" autocomplete="off" class="txtarea2" placeholder="露个文采证明您是房东吧~出租更快噢~" maxlength="50"></textarea>
+                            <span id="tip_span_user_word"></span>
+                        </td>
+                    </tr>
+
+                    <tr height="50" id="showcode" style="display: none">
+                        <th><span class="star">*</span>验证码</th>
+                        <td>
+                            <input class="input-style" name="checkcode" value="" maxlength="4" style="color: #bbb" autocomplete="off"><div style="display: inline" id="checkcode"></div>
+                        </td>
+                    </tr>
+
+
+
+
+
+                    <tr>
+                        <td colspan="2">
+                            <div class="dot_line"></div>
+                        </td>
+                    </tr>
+
+
+                    <tr id="pub_sumit_show">
+                        <th>&nbsp;</th>
+                        <td id="submiting" width="846">
+                            <input class="btn-style2" name="" type="submit" id="pub_submit" value="立即发布">
+                            <input name="pinyin" id="id_pinyin" type="hidden" value="">
+                            <input name="times" id="times" type="hidden" value="0">
+                            <input name="is_edit" id="is_edit" type="hidden" value="0">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+
+    </div>
+    <!--table e-->
+</div>

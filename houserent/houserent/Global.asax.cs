@@ -53,7 +53,7 @@ namespace houserent
         {
             Exception ex = HttpContext.Current.Server.GetLastError();
             File.WriteAllText(HttpContext.Current.Server.MapPath("~/log.txt"), ex.Message + DateTime.Now.ToShortTimeString());
-            Response.Redirect("./404error.htm");
+            //Response.Redirect("./404error.htm");
         }
     }
 }

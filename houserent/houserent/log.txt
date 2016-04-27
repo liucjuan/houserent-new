@@ -1,1 +1,1 @@
-尝试除以零。21:51
+e:\workplace\houserent-new\houserent\houserent\Views\Listings\NewListings.cshtml(470): error CS0103: 当前上下文中不存在名称“tag”23:26
