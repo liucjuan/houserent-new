@@ -24,10 +24,16 @@ namespace houserent
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
+            //routes.MapRoute(
+            //    "Home", // 路由名称
+            //    "{controller}/{action}/{id}", // 带有参数的 URL
+            //    new { controller = "Home", action = "Index", id = UrlParameter.Optional } // 参数默认值
+            //);
+
             routes.MapRoute(
-                "Home", // 路由名称
-                "{controller}/{action}/{id}", // 带有参数的 URL
-                new { controller = "Home", action = "Index", id = UrlParameter.Optional } // 参数默认值
+                name: "Default",
+                url: "{controller}/{action}/{id}",
+                defaults: new { controller = "List", action = "List", id = UrlParameter.Optional }
             );
 
         }
