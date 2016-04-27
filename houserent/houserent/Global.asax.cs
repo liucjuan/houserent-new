@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Data.Entity.Infrastructure;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -40,6 +41,13 @@ namespace houserent
 
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
+        }
+
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            Exception ex = HttpContext.Current.Server.GetLastError();
+            File.WriteAllText(HttpContext.Current.Server.MapPath("~/log.txt"), ex.Message + DateTime.Now.ToShortTimeString());
+            Response.Redirect("./404error.htm");
         }
     }
 }
