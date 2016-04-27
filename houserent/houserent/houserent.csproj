@@ -95,6 +95,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="404error.htm" />
     <Content Include="App_Code\DBConfig.cs" />
     <Content Include="App_Code\DBHelper.cs" />
     <Content Include="App_Code\SetValueOfClass.cs" />

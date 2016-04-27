@@ -6,6 +6,7 @@ using System.Reflection;
 using System.Text;
 using System.Web;
 using System.Web.UI.WebControls;
+using Error;
 
 /// <summary>
 /// DBHelper 的摘要说明
