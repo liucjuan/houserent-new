@@ -1,7 +1,13 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2012
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "houserent", "houserent\houserent.csproj", "{CEFEC7EB-8578-48D1-9ED3-4D16F029E4BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationService", "ApplicationService\ApplicationService.csproj", "{8BEDF20E-9203-4325-9990-4814544D08A7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ApplicationEntity", "ApplicationEntity\ApplicationEntity.csproj", "{3B64B9B6-5B8F-4395-A357-CD77435242A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,6 +19,14 @@ Global
 		{CEFEC7EB-8578-48D1-9ED3-4D16F029E4BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CEFEC7EB-8578-48D1-9ED3-4D16F029E4BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CEFEC7EB-8578-48D1-9ED3-4D16F029E4BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BEDF20E-9203-4325-9990-4814544D08A7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BEDF20E-9203-4325-9990-4814544D08A7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BEDF20E-9203-4325-9990-4814544D08A7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BEDF20E-9203-4325-9990-4814544D08A7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3B64B9B6-5B8F-4395-A357-CD77435242A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3B64B9B6-5B8F-4395-A357-CD77435242A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3B64B9B6-5B8F-4395-A357-CD77435242A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3B64B9B6-5B8F-4395-A357-CD77435242A1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
