@@ -198,6 +198,8 @@
     <Content Include="Scripts\modernizr-2.5.3.js" />
     <Content Include="static\css\newlistings.css" />
     <Content Include="static\img\nav_120719.png" />
+    <Content Include="static\js\jquery-1.12.2.js" />
+    <Content Include="static\js\newlistlings.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -229,9 +231,7 @@
     <Content Include="Views\PublishProduct\Index.cshtml" />
     <Content Include="static\css\newlistings.less" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="static\js\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />

@@ -64,9 +64,15 @@
                 <tbody>
                     <tr>
                         <th width="100"><span class="star">*</span>出租方式</th>
-                        <td class="space">
-                            <input class="input-radio rentToShare" name="rent_mode" type="radio" value="1" checked="checked" id="rent_mode1" autocomplete="off"><label for="rent_mode1">整租</label>
-                            <input class="input-radioe shareToRent" name="rent_mode" type="radio" value="2" id="rent_mode2" autocomplete="off"><label for="rent_mode2">合租</label>
+                        <td class="space">                            
+                            <label for="rent_mode1">
+                                <input class="input-radio rentToShare" name="rent_mode" type="radio" value="1" checked="checked" id="rent_mode1" autocomplete="off">
+                                整租
+                            </label>
+                            <label for="rent_mode2">
+                                <input class="input-radioe shareToRent" name="rent_mode" type="radio" value="2" id="rent_mode2" autocomplete="off">
+                                合租
+                            </label>
                             <span id="tip_span_rent_mode"></span>
                             <!--<label><input type="radio" autocomplete="off" value="1" name="rent_mode" />整租</label>
 	                <label><input type="radio" autocomplete="off" value="2" name="rent_mode" />合租</label>
@@ -566,3 +572,8 @@
     </div>
     <!--table e-->
 </div>
+
+
+
+<script type="text/javascript" src="/static/js/jquery-1.12.2.js"></script>
+<script type="text/javascript" src="/static/js/newlistlings.js"></script>
